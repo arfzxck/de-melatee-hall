@@ -16,7 +16,7 @@
 <!-- Elegant Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
 <style>
 /* ============================================================================
@@ -231,7 +231,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 /* --- Bismillah intro --- */
 .floral-top{color:var(--gold-soft);margin:0 auto 26px;max-width:240px;}
 .floral-top svg{width:100%;height:auto;display:block;}
-#intro .bismillah{font-family:var(--serif);font-size:clamp(22px,5vw,32px);color:var(--gold-soft);font-style:italic;}
+/* Full Arabic Bismillah calligraphy */
+.bismillah-ar{
+  font-family:'Aref Ruqaa','Amiri',serif;font-weight:700;
+  font-size:clamp(30px,9vw,46px);line-height:1.7;color:var(--white);
+  margin:0 auto 22px;direction:rtl;
+}
+#intro .bismillah{font-family:var(--serif);font-size:clamp(20px,5vw,28px);color:var(--gold-soft);font-style:italic;margin-top:6px;}
 #intro .salam{max-width:520px;margin:18px auto 0;font-weight:300;color:var(--beige);font-size:14px;letter-spacing:.02em;}
 #intro .hosts{margin:26px auto 6px;}
 #intro .host-line{font-family:var(--display);font-size:clamp(17px,4.5vw,21px);color:var(--white);font-weight:500;line-height:1.5;}
@@ -262,24 +268,36 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .music-btn.playing .mnote{animation-play-state:running;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
-/* --- Bride & Groom --- */
-.couple{
-  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
-  gap:clamp(24px,6vw,60px);margin-top:20px;
+/* --- Bride & Groom (framed portraits + script names) --- */
+.couple2{margin-top:26px;display:flex;flex-direction:column;gap:clamp(26px,6vw,44px);}
+.cp-row{display:flex;align-items:center;justify-content:center;gap:clamp(14px,4vw,26px);}
+.cp-row.flip{flex-direction:row-reverse;}
+.portrait-frame{
+  flex:0 0 auto;width:clamp(120px,40vw,168px);padding:9px;border-radius:4px;position:relative;
+  background:linear-gradient(135deg,#eccb7c 0%,#b8933c 32%,#f2dfa4 52%,#a5822f 74%,#d8b45f 100%);
+  box-shadow:0 16px 34px rgba(74,90,52,.32);
 }
-.person{flex:1 1 220px;max-width:300px;}
-.person .avatar{
-  width:150px;height:150px;border-radius:50%;margin:0 auto 22px;
-  background:radial-gradient(circle at 35% 30%,var(--gold-bright),var(--gold));
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-size:52px;color:var(--brown-900);
-  border:1px solid rgba(111,138,60,.4);
-  box-shadow:0 16px 40px rgba(74,90,52,.28),inset 0 0 0 6px rgba(255,255,255,.35),0 0 0 8px rgba(111,138,60,.14);
+.portrait-frame::after{content:'';position:absolute;inset:5px;border:2px solid rgba(120,90,28,.45);border-radius:2px;pointer-events:none;}
+.portrait{
+  background:#f7f5ee;border-radius:2px;overflow:hidden;
+  aspect-ratio:1/1;                 /* square frame; photo fills it */
+  box-shadow:inset 0 0 0 1px rgba(120,90,28,.25);
 }
-.person h3{font-family:var(--display);font-size:clamp(26px,5vw,36px);color:var(--white);font-weight:500;}
-.person .role{font-family:var(--title);letter-spacing:.25em;font-size:11px;color:var(--gold);margin-top:8px;text-transform:uppercase;}
-.person .parents{font-family:var(--serif);font-style:italic;color:var(--beige);margin-top:12px;font-size:16px;}
-.couple .amp-big{font-family:var(--serif);font-style:italic;font-size:48px;color:var(--gold);flex:0 0 auto;}
+.portrait .portrait-img{
+  width:100%;height:100%;display:block;
+  object-fit:cover;                 /* fill the frame, crop overflow */
+  object-position:center top;       /* keep the head/upper body in view */
+}
+.portrait svg{display:block;width:100%;height:auto;}
+.tilt-l{transform:rotate(-4deg);}
+.tilt-r{transform:rotate(4deg);}
+.cp-name{
+  flex:1 1 auto;font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(24px,6.5vw,34px);line-height:1.2;color:#5f8f34;
+}
+.cp-row .cp-name{text-align:left;}
+.cp-row.flip .cp-name{text-align:right;}
+.cp-name span{font-size:.82em;}
 
 /* --- Date --- */
 #date .date-card{padding:38px 26px;margin-top:8px;display:inline-block;}
@@ -484,18 +502,7 @@ footer{padding-bottom:96px;}
 
 @media (max-width:600px){
   .date-row{gap:16px;}
-  /* Keep bride & groom side-by-side (left & right) on phones */
-  .couple{flex-wrap:nowrap;gap:12px;align-items:flex-start;}
-  .couple .amp-big{display:flex;align-items:center;align-self:center;font-size:30px;flex:0 0 auto;}
-  .person{flex:1 1 0;min-width:0;max-width:none;}
-  .person .avatar{width:clamp(72px,25vw,120px);height:clamp(72px,25vw,120px);font-size:clamp(30px,9vw,46px);margin-bottom:16px;}
-  .person h3{font-size:clamp(18px,5.6vw,26px);}
-  .person .role{font-size:10px;letter-spacing:.14em;}
-  .person .parents{font-size:12.5px;margin-top:10px;}
-}
-@media (max-width:380px){
-  .couple .amp-big{display:none;}
-  .couple{gap:10px;}
+  .portrait-frame{width:clamp(108px,38vw,150px);}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001s!important;transition-duration:.2s!important;}
@@ -549,14 +556,15 @@ footer{padding-bottom:96px;}
 
   <!-- Intro / salutation + hosts -->
   <section class="section" id="intro">
-    <p data-reveal="up" class="salam">Assalamualaikum dan Selamat Sejahtera</p>
-    <div data-reveal="up" data-delay="1" class="bismillah">Dengan nama Allah yang Maha Pengasih<br>lagi Maha Penyayang</div>
+    <div class="bismillah-ar" data-reveal="up" dir="rtl" lang="ar"></div><br></div>
+    <p data-reveal="up" data-delay="1" class="salam">Assalamualaikum <br>dan Selamat Sejahtera</p>
+    <div data-reveal="up" data-delay="1" class="bismillah">Dengan nama Allah<br>yang Maha Pengasih<br>lagi Maha Penyayang</div>
     <div class="hosts" data-reveal="up" data-delay="1">
       <div class="host-line">Mazlan Bin Mansor</div>
       <div class="host-amp">&amp;</div>
       <div class="host-line">Zanariah Binti Shaa'ri</div>
     </div>
-    <p data-reveal="up" data-delay="2">Dengan penuh rasa kesyukuran, kami ingin menjemput<br>Dato' | Datin | Tuan | Puan | Encik | Cik<br>ke majlis perkahwinan anakanda kami.</p>
+    <p data-reveal="up" data-delay="2">Dengan penuh rasa kesyukuran,<br> kami ingin menjemput<br>Dato' | Datin | Tuan | Puan | Encik | Cik<br>ke majlis perkahwinan anakanda kami.</p>
   </section>
 
   <!-- Bride & Groom -->
@@ -564,19 +572,25 @@ footer{padding-bottom:96px;}
     <div class="eyebrow" data-reveal="up">Raja Sehari</div>
     <h2 class="s-title letters" data-reveal="up" data-letters>Pengantin</h2>
     <div class="orn" data-reveal="up"><span>❦</span></div>
-    <div class="couple">
-      <div class="person" data-reveal="left">
-        <div class="avatar">N</div>
-        <h3>Nisa</h3>
-        <div class="role">Pengantin Perempuan</div>
-        <div class="parents">Puteri kepada<br>Encik Mazlan &amp; Puan Zanariah</div>
+    <div class="couple2">
+      <!-- Bride: frame left, name right -->
+      <div class="cp-row" data-reveal="up">
+        <div class="portrait-frame tilt-l" data-reveal="left">
+          <div class="portrait">
+            <img class="portrait-img" src="girl-icon.png" alt="Pengantin Perempuan — Nisa" loading="lazy" />
+          </div>
+        </div>
+        <div class="cp-name" data-reveal="right">Nisa<br><span>Illiyina<br><span>Binti Mazlan</span></div>
       </div>
-      <div class="amp-big" data-reveal="scale">&amp;</div>
-      <div class="person" data-reveal="right">
-        <div class="avatar">A</div>
-        <h3>Arif</h3>
-        <div class="role">Pengantin Lelaki</div>
-        <div class="parents">Putera kepada<br>Encik Zaki &amp; Puan Zuraidah</div>
+
+      <!-- Groom: name left, frame right -->
+      <div class="cp-row flip" data-reveal="up">
+        <div class="portrait-frame tilt-r" data-reveal="left">
+          <div class="portrait">
+            <img class="portrait-img" src="man-icon.png" alt="Pengantin Lelaki — Arif" loading="lazy" />
+          </div>
+        </div>
+        <div class="cp-name" data-reveal="right">Muhammad<br><span>Arif<br><span>bin Ahmad Zaki</span></div>
       </div>
     </div>
   </section>
