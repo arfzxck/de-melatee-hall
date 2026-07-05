@@ -10,8 +10,8 @@
 -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Walimatul Urus — Tengku &amp; Sofea</title>
-<meta name="description" content="Undangan Majlis Perkahwinan Tengku & Sofea" />
+<title>Walimatul Urus — Arif &amp; Nisa</title>
+<meta name="description" content="Undangan Majlis Perkahwinan Arif & Nisa" />
 
 <!-- Elegant Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -392,6 +392,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .acara-row.flip .acara-text{order:3;text-align:left;padding-left:16px;padding-right:0;}
 .acara-time{font-family:var(--title);letter-spacing:.14em;color:var(--gold);font-size:13px;text-transform:uppercase;}
 .acara-text h4{font-family:var(--serif);font-style:italic;color:var(--white);font-size:clamp(19px,4.5vw,24px);margin-top:5px;font-weight:600;}
+.acara-desc{color:var(--beige);font-weight:300;font-size:12.5px;margin-top:5px;line-height:1.45;max-width:220px;margin-left:auto;}
+.acara-row.flip .acara-desc{margin-left:0;margin-right:auto;}
 .acara-node{
   grid-column:2;justify-self:center;width:16px;height:16px;border-radius:50%;z-index:2;
   background:radial-gradient(var(--gold-bright),var(--bronze));
@@ -404,6 +406,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .acara::before{left:10px;}
   .acara-row,.acara-row.flip{grid-template-columns:22px 1fr;min-height:auto;margin:20px 0;}
   .acara-text,.acara-row.flip .acara-text{order:2;text-align:left;padding:0 0 0 16px;}
+  .acara-desc,.acara-row.flip .acara-desc{margin-left:0;margin-right:0;max-width:none;}
   .acara-node{grid-column:1;justify-self:start;margin-left:2px;}
   .acara-icon,.acara-row.flip .acara-icon{display:none;}
 }
@@ -422,6 +425,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .contact-card{flex:1 1 240px;max-width:300px;padding:30px 26px;text-align:center;}
 .contact-card .c-name{font-family:var(--display);font-size:24px;color:var(--white);font-weight:500;}
 .contact-card .c-role{font-family:var(--serif);font-style:italic;color:var(--beige);font-size:15px;margin-top:6px;}
+.contact-card .c-phone{font-family:var(--title);letter-spacing:.1em;color:var(--gold);font-size:15px;margin-top:12px;}
 .contact-card .c-actions{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap;}
 .c-btn{
   display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:50px;
@@ -446,6 +450,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   transition:transform .5s var(--ease-lux),box-shadow .5s var(--ease-lux);
 }
 .map-btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 16px 36px rgba(111,138,60,.55);}
+.venue-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;}
+.venue-actions .map-btn{margin-top:0;}
+.map-btn.alt{
+  color:var(--white);background:rgba(255,255,255,.4);
+  border:1px solid rgba(111,138,60,.45);box-shadow:0 8px 20px rgba(74,90,52,.14);
+}
+.map-btn.alt:hover{background:rgba(255,255,255,.62);box-shadow:0 14px 30px rgba(111,138,60,.32);}
 
 /* --- RSVP --- */
 #rsvp .rsvp-wrap{position:relative;margin-top:24px;}
@@ -605,10 +616,10 @@ footer{padding-bottom:96px;}
   <div class="cover-vignette"></div>
   <div class="cover-inner">
     <div class="cover-eyebrow">Walimatul Urus</div>
-    <div class="cover-monogram">T&nbsp;<span>&amp;</span>&nbsp;S</div>
-    <h1 class="cover-names">Tengku<span class="amp">&amp;</span>Sofea</h1>
+    <div class="cover-monogram">A&nbsp;<span>&amp;</span>&nbsp;N</div>
+    <h1 class="cover-names">Arif<span class="amp">&amp;</span>Nisa</h1>
     <div class="cover-divider"></div>
-    <div class="cover-sub">Sabtu &nbsp;•&nbsp; 20 Disember 2026</div>
+    <div class="cover-sub">Sabtu &nbsp;•&nbsp; 5 September 2026</div>
     <button class="open-btn" id="openBtn" aria-label="Buka Undangan">
       Buka Undangan <span class="btn-icon">✦</span>
     </button>
@@ -625,13 +636,13 @@ footer{padding-bottom:96px;}
     <div class="env-body"></div>
     <div class="env-card">
       <div class="ec-orn">❦</div>
-      <h3>Tengku &amp; Sofea</h3>
+      <h3>Arif &amp; Nisa</h3>
       <div class="ec-line"></div>
       <p>mempersilakan anda</p>
     </div>
     <div class="env-pocket"></div>
     <div class="env-flap"></div>
-    <div class="env-seal">T</div>
+    <div class="env-seal">A</div>
   </div>
 </div>
 
@@ -654,17 +665,17 @@ footer{padding-bottom:96px;}
     <div class="orn" data-reveal="up"><span>❦</span></div>
     <div class="couple">
       <div class="person" data-reveal="left">
-        <div class="avatar">S</div>
-        <h3>Sofea Insyirah</h3>
+        <div class="avatar">N</div>
+        <h3>Nisa</h3>
         <div class="role">Pengantin Perempuan</div>
-        <div class="parents">Puteri kepada<br>Encik Rahman &amp; Puan Latifah</div>
+        <div class="parents">Puteri kepada<br>Encik Mazlan &amp; Puan Zanariah</div>
       </div>
       <div class="amp-big" data-reveal="scale">&amp;</div>
       <div class="person" data-reveal="right">
-        <div class="avatar">T</div>
-        <h3>Tengku Danial</h3>
+        <div class="avatar">A</div>
+        <h3>Arif</h3>
         <div class="role">Pengantin Lelaki</div>
-        <div class="parents">Putera kepada<br>Encik Kamal &amp; Puan Noraini</div>
+        <div class="parents">Putera kepada<br>Encik Zaki &amp; Puan Zuraidah</div>
       </div>
     </div>
   </section>
@@ -677,15 +688,15 @@ footer{padding-bottom:96px;}
     <div class="orn" data-reveal="up"><span>❧</span></div>
     <div class="date-card glass" data-reveal="scale">
       <div class="date-row">
-        <div class="num">20</div>
+        <div class="num">05</div>
         <div class="vbar"></div>
         <div class="mid">
           <div class="day">Sabtu</div>
-          <div class="month">Disember</div>
+          <div class="month">September</div>
           <div class="day">2026</div>
         </div>
       </div>
-      <div class="hijri">1 Rejab 1448 H</div>
+      <div class="hijri">24 Rabiulawal 1448 H</div>
     </div>
   </section>
 
@@ -707,13 +718,17 @@ footer{padding-bottom:96px;}
     <div class="eyebrow" data-reveal="up">Atur Cara</div>
     <h2 class="s-title" data-reveal="up">Aturcara <span class="it">Majlis</span></h2>
     <div class="orn" data-reveal="up"><span>❧</span></div>
+    <p data-reveal="up" style="max-width:440px;margin:0 auto;color:var(--beige);font-weight:300;">
+      Diraikan penuh adat &amp; istiadat buat para tetamu kehormat.
+    </p>
 
     <div class="acara">
       <!-- 1 — text left / icon right -->
       <div class="acara-row" data-reveal="right">
         <div class="acara-text">
-          <div class="acara-time">4.30 petang</div>
+          <div class="acara-time">7.30 pagi</div>
           <h4>Ketibaan Tetamu</h4>
+          <p class="acara-desc">Sambutan &amp; alu-aluan tetamu kehormat</p>
         </div>
         <div class="acara-node"></div>
         <div class="acara-icon">
@@ -727,8 +742,9 @@ footer{padding-bottom:96px;}
       <!-- 2 — icon left / text right -->
       <div class="acara-row flip" data-reveal="left">
         <div class="acara-text">
-          <div class="acara-time">5.00 petang</div>
-          <h4>Majlis Nikah Bermula</h4>
+          <div class="acara-time">8.30 pagi</div>
+          <h4>Akad Nikah</h4>
+          <p class="acara-desc">Ijab &amp; kabul disempurnakan</p>
         </div>
         <div class="acara-node"></div>
         <div class="acara-icon">
@@ -742,8 +758,9 @@ footer{padding-bottom:96px;}
       <!-- 3 — text left / icon right -->
       <div class="acara-row" data-reveal="right">
         <div class="acara-text">
-          <div class="acara-time">6.00 petang</div>
-          <h4>Jamuan Makan</h4>
+          <div class="acara-time">12.00 tengah hari</div>
+          <h4>Resepsi</h4>
+          <p class="acara-desc">Jamuan santapan &amp; majlis persandingan</p>
         </div>
         <div class="acara-node"></div>
         <div class="acara-icon">
@@ -758,8 +775,9 @@ footer{padding-bottom:96px;}
       <!-- 4 — icon left / text right -->
       <div class="acara-row flip" data-reveal="left">
         <div class="acara-text">
-          <div class="acara-time">7.00 petang</div>
-          <h4>Majlis Tamat</h4>
+          <div class="acara-time">4.00 petang</div>
+          <h4>Majlis Selesai</h4>
+          <p class="acara-desc">Sesi bergambar &amp; pelepasan tetamu</p>
         </div>
         <div class="acara-node"></div>
         <div class="acara-icon">
@@ -777,11 +795,16 @@ footer{padding-bottom:96px;}
     <h2 class="s-title" data-reveal="up">Tempat <span class="it">Bertemu</span></h2>
     <div class="orn" data-reveal="up"><span>❦</span></div>
     <div class="venue-card glass" data-reveal="scale">
-      <div class="venue-name">Dewan Sri Perdana</div>
-      <div class="venue-addr">No. 12, Jalan Mawar Indah, Taman Seri Bahagia, 43000 Kajang, Selangor Darul Ehsan</div>
-      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Kajang+Selangor" target="_blank" rel="noopener">
-        📍 Buka Google Maps
-      </a>
+      <div class="venue-name">De Melatee Hall</div>
+      <div class="venue-addr">2974, Lorong Melati, Kampung Cempedak, 47000 Sungai Buloh, Selangor</div>
+      <div class="venue-actions">
+        <a class="map-btn" href="https://www.google.com/maps?rlz=1C1ONGR_enMY1159MY1159&gs_lcrp=EgZjaHJvbWUqDAgBEC4YJxivARjHATIHCAAQABiABDIMCAEQLhgnGK8BGMcBMgYIAhBFGDkyBggDEEUYOzIGCAQQIxgnMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMjM4N2owajmoAgawAgHxBX_ITP69dgEv&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=Kclx-gzrRcwxMarL2nvpki2b&daddr=2974,+Lorong+Melati,+Kampung+Cempedak,+47000+Sungai+Buloh,+Selangor" target="_blank" rel="noopener">
+          📍 Google Maps
+        </a>
+        <a class="map-btn alt" href="https://www.waze.com/en-GB/live-map/directions/my/selangor/sungai-buloh/de-melatee-hall?to=place.ChIJyXH6DOtFzDERqsvae-mSLZs" target="_blank" rel="noopener">
+          🧭 Waze
+        </a>
+      </div>
     </div>
   </section>
 
@@ -811,19 +834,21 @@ footer{padding-bottom:96px;}
     </p>
     <div class="contacts">
       <div class="contact-card glass" data-reveal="left">
-        <div class="c-name">Puan Latifah</div>
+        <div class="c-name">Puan Zanariah</div>
         <div class="c-role">Ibu Pengantin Perempuan</div>
+        <div class="c-phone">011-1066 5181</div>
         <div class="c-actions">
-          <a href="tel:+60123456789" class="c-btn">📞 Panggil</a>
-          <a href="https://wa.me/60123456789" target="_blank" rel="noopener" class="c-btn wa">💬 WhatsApp</a>
+          <a href="tel:+601110665181" class="c-btn">📞 Panggil</a>
+          <a href="https://wa.me/601110665181" target="_blank" rel="noopener" class="c-btn wa">💬 WhatsApp</a>
         </div>
       </div>
       <div class="contact-card glass" data-reveal="right">
-        <div class="c-name">Encik Kamal</div>
-        <div class="c-role">Bapa Pengantin Lelaki</div>
+        <div class="c-name">Encik Mazlan</div>
+        <div class="c-role">Bapa Pengantin Perempuan</div>
+        <div class="c-phone">012-654 1163</div>
         <div class="c-actions">
-          <a href="tel:+60198765432" class="c-btn">📞 Panggil</a>
-          <a href="https://wa.me/60198765432" target="_blank" rel="noopener" class="c-btn wa">💬 WhatsApp</a>
+          <a href="tel:+60126541163" class="c-btn">📞 Panggil</a>
+          <a href="https://wa.me/60126541163" target="_blank" rel="noopener" class="c-btn wa">💬 WhatsApp</a>
         </div>
       </div>
     </div>
@@ -896,10 +921,10 @@ footer{padding-bottom:96px;}
   <!-- Footer -->
   <footer>
     <div class="f-orn" data-reveal="scale">❦</div>
-    <div class="f-names" data-reveal="up">Tengku &amp; Sofea</div>
+    <div class="f-names" data-reveal="up">Arif &amp; Nisa</div>
     <p class="f-thanks" data-reveal="up" data-delay="1">“Dan di antara tanda-tanda kekuasaan-Nya, Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya.”</p>
     <div class="f-mini" data-reveal="up" data-delay="2">— Ar-Rum : 21 —</div>
-    <div class="f-mini" style="margin-top:26px;opacity:.6;">Dengan kasih • Tengku &amp; Sofea • 2026</div>
+    <div class="f-mini" style="margin-top:26px;opacity:.6;">Dengan kasih • Arif &amp; Nisa • 2026</div>
   </footer>
 </main>
 
@@ -912,6 +937,7 @@ footer{padding-bottom:96px;}
   <a href="#venue"><span class="qn-ico">📍</span><span class="qn-lbl">Lokasi</span></a>
   <a href="#rsvp"><span class="qn-ico">✉️</span><span class="qn-lbl">RSVP</span></a>
   <a href="#contact"><span class="qn-ico">📞</span><span class="qn-lbl">Hubungi</span></a>
+  <a href="#wishes"><span class="qn-ico">🤲</span><span class="qn-lbl">Ucapan</span></a>
 </nav>
 
 <script>
@@ -1072,7 +1098,7 @@ footer{padding-bottom:96px;}
   /* ------------------------------------------------------------------ *
    * F. LIVE COUNTDOWN
    * ------------------------------------------------------------------ */
-  const TARGET = new Date('2026-12-20T11:00:00+08:00').getTime();
+  const TARGET = new Date('2026-09-05T07:30:00+08:00').getTime();
   let cdTimer=null;
   function tickCountdown(){
     const diff = TARGET - Date.now();
